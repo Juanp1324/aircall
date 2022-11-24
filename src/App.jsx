@@ -1,21 +1,18 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-import axios from "axios"
+import axios from "axios";
 import Header from "./components/Header.jsx";
 import ActivityFeed from "./components/ActivityFeed.jsx";
 import ActivityDetail from "./components/ActivityDetail.jsx";
 import Footer from "./components/Footer.jsx";
-
 import Archived from "./components/Archived.jsx";
 
-
-
 const App = () => {
-  const [shouldShow, setShouldShow] = useState(true)
+  const [shouldShow, setShouldShow] = useState(true);
   const [data, setData] = useState(null);
-  const [activityDetail, setActivityDetail] = useState()
-  const [shouldRefetch, setShouldRefetch] = useState(false)
-  
+  const [activityDetail, setActivityDetail] = useState(null);
+  const [shouldRefetch, setShouldRefetch] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
@@ -24,25 +21,41 @@ const App = () => {
           `https://aircall-job.herokuapp.com/activities`
         );
         setData(response.data);
-        // setError(null);
       } catch (err) {
         setError(err.message);
         setData(null);
-      } finally {
-        // setLoading(false);
       }
     };
     getData();
   }, [shouldRefetch]);
 
-
   return (
     <div className="container">
-      <Header setShouldShow={setShouldShow} shouldShow={shouldShow}/>
-      <ActivityFeed shouldShow={shouldShow} data={data} setShouldRefetch={setShouldRefetch} setActivityDetail={setActivityDetail}/>
-      <ActivityDetail shouldShow={shouldShow} activityDetail={activityDetail} setShouldRefetch={setShouldRefetch}/>
-      <Archived shouldShow={shouldShow} data={data} setShouldRefetch={setShouldRefetch}/>
-      <div className="footer"><Footer/></div>
+      <Header setShouldShow={setShouldShow} shouldShow={shouldShow} />
+      <ActivityFeed
+        shouldShow={shouldShow}
+        data={data}
+        setShouldRefetch={setShouldRefetch}
+        setActivityDetail={setActivityDetail}
+        setOpen={setOpen}
+      />
+      <ActivityDetail
+        shouldShow={shouldShow}
+        activityDetail={activityDetail}
+        setShouldRefetch={setShouldRefetch}
+        setOpen={setOpen}
+        open={open}
+      />
+      <Archived
+        shouldShow={shouldShow}
+        data={data}
+        setShouldRefetch={setShouldRefetch}
+        setActivityDetail={setActivityDetail}
+        setOpen={setOpen}
+      />
+      <div className="footer">
+        <Footer />
+      </div>
     </div>
   );
 };

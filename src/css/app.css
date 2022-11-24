@@ -7,7 +7,7 @@
   right: 0;
   bottom: 0;
   color: white;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   position: absolute;
 }
 
@@ -18,7 +18,7 @@
   position: relative;
   background: grey;
   border-radius: 20px;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .9);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.9);
 }
 
 #app .footer {
@@ -31,6 +31,5 @@
 }
 
 #app button {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-

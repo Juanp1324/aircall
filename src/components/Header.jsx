@@ -1,7 +1,6 @@
 import React from 'react';
 
 
-
 const Header = (props) => {
   function displayActivity() {
     props.setShouldShow(true)

@@ -29,7 +29,7 @@ const ActivityFeed= (props) => {
   return(props.shouldShow && (
     <div className="body">
       <h1>Recent Calls</h1>
-      {!props.data && <div>A moment please...</div>}
+      {!props.data && <div className = 'loading'>A moment please...</div>}
           {props.data &&
             props.data.filter(message => message.is_archived === false).map(filteredData => (
               <div className="feedContainer" key={filteredData.id}>

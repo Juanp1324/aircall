@@ -33,3 +33,9 @@
 #app button {
   font-family: "Roboto", sans-serif;
 }
+
+.loading{
+  font-size: 22px;
+  padding-top: 30px;
+  padding-left: 30px;
+}

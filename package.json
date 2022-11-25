@@ -7,10 +7,10 @@
   "author": "",
   "license": "",
   "private": false,
-  "engines": { 
-   "node": "16.17.0", 
-   "npm": "9.1.2"
- } ,
+  "engines": {
+    "node": "16.17.0",
+    "npm": "9.1.2"
+  },
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production"

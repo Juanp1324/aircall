@@ -13,7 +13,8 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "heroku-prebuild": "npm install --dev"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
